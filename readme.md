@@ -174,6 +174,7 @@ return [
     'support' => [
         'search' => false,
         'footer-menu' => false,
+        'has_social' => true,
     ]
 ];
 ```
