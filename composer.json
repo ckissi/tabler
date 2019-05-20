@@ -1,0 +1,53 @@
+{
+    "name": "ckissi/tabler",
+    "description": "Tabler template for Laravel 5.* with Social logins and Error handling",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "baorv",
+            "email": "roanvanbao@gmail.com"
+        },
+        {
+            "name": "Csaba Kissi",
+            "email": "ckissi@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/ckissi/tabler",
+    "keywords": ["Laravel", "tabler"],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "tabler/tabler": "^0.0.32",
+        "illuminate/support": ">=5.0",
+        "illuminate/auth": ">=5.0",
+        "lavary/laravel-menu": ">=1.6.1",
+        "laravelcollective/html": ">=5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ckissi\\tabler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ckissi\\tabler\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ckissi\\tabler\\tablerServiceProvider"
+            ],
+            "aliases": {
+                "tabler": "ckissi\\tabler\\Facades\\tabler"
+            }
+        }
+    }
+}
