@@ -43,7 +43,7 @@
                 <span class="invalid-feedback">
                     <strong>{{ $errors->first('email') }}</strong>
                 </span>
-            @endif
+            @enderror
         </div>
         <div class="form-group">
             <label class="form-label" for="password">

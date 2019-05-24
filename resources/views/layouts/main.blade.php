@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="{{ app()->getLocale() }}" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +9,24 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <link href="{{ asset('admin/assets/css/dashboard.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.3.0/css/iziToast.min.css"/>
     @stack('styles')
-    <script src="{{ asset('admin/assets/js/require.min.js') }}"></script>
+
+    {{--<script src="{{ asset('admin/assets/js/require.min.js') }}"></script>
     <script>
         requirejs.config({
-            baseUrl: './admin'
+            baseUrl: '/admin'
         });
-    </script>
+        // require(['//cdnjs.cloudflare.com/ajax/libs/izitoast/1.3.0/js/iziToast.min.js']);
+    </script>--}}
+    <script src="/admin/assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <script src="/admin/assets/js/core.js"></script>
+    <script src="/admin/assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="/admin/assets/js/vendors/jquery.sparkline.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/izitoast/1.3.0/js/iziToast.min.js"></script>
     <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
+
+
     @stack('scripts')
 </head>
 <body>
@@ -100,5 +109,17 @@
         </div>
     </footer>
 </div>
+@if (session('msg'))
+    <script>
+        $(window).on('load', function() {
+            iziToast.success({
+                title: 'OK',
+                position: 'topCenter',
+                progressBar: false,
+                message: '{{ session('msg') }}',
+            });
+        });
+    </script>
+@endif
 </body>
 </html>
